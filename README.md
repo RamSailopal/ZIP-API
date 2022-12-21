@@ -8,9 +8,7 @@ Utilises YottaDB as the database and Python flask to present the API endpoint.
 
 # To run
 
-    git clone https://github.com/RamSailopal/ZIP-API.git
-    cd ZIP-API
-    docker-compose up
+    docker-run -p 5000:5000 -it docker.io/ramb0/api-zip
     
 
 The endpoint will then be available at the address http://dockerserveraddress:5000/zip
