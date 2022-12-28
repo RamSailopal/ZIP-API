@@ -18,7 +18,6 @@ jobs:
 
       - name: Build the image
         run: |
-          docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
           cd dockerfile
           docker build --rm --no-cache -t ramb0/api-zip .
 
@@ -32,6 +31,7 @@ jobs:
           DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
         run: |
+          docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
           docker push ramb0/api-zip
 
 
