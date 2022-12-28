@@ -1,5 +1,7 @@
 # ZIP-API
 
+![example workflow](https://github.com/RamSailopal/ZIP-API/actions/workflows/deploy.yml/badge.svg)
+
 An API that takes a zip  code and returns the longitute and latitude
 
 Utilises files found from https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html (2022 data)
