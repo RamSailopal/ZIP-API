@@ -1,4 +1,4 @@
-name: Build in Linode
+name: Build, test and push image
 
 on:
   # run it on push to the default repository branch (main)
