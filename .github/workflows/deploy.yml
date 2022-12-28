@@ -20,7 +20,7 @@ jobs:
         run: |
           docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
           cd dockerfile
-          docker build --rm --no-cache -t ramb0/api-zip
+          docker build --rm --no-cache -t ramb0/api-zip .
 
       - name: Test the image
         run: |
