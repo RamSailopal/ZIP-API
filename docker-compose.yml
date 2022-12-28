@@ -1,16 +1,23 @@
 version: "2"
 services:
   zipapi:
-    image: docker.io/yottadb/yottadb-base 
+    image: ramb0/api-zip 
     container_name: "zipapi"
+    hostname: "pcodeapi"
+    networks:
+      - flask
+    ports:
+      - 5000:5000
+
+  newman:
+    image: docker.io/ramb0/newman-ssh
+    container_name: "newman"
     networks:
       - flask
     volumes:
-      - "$PWD/code:/home/zipcode"
-    ports:
-      - 5000:5000
-    entrypoint:
-      - "/home/zipcode/entrypoint.sh"
+      - "$PWD/newman:/home/newman"
+    entrypoint: [ "/bin/bash", "-c", "sleep 10 && cd /home/newman && newman run zipcheck.postman_collection.json" ]
+    
 
 networks:
     flask:
